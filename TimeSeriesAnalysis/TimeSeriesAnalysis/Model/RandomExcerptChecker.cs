@@ -68,7 +68,7 @@ namespace TimeSeriesAnalysis.Model
                 }
             }
             double rc = 1 - 12 * v / excerpt.Count / (excerpt.Count * excerpt.Count - 1);
-            double d = 1 / (excerpt.Count - 1);
+            double d = 1.0 / (excerpt.Count - 1);
             double s = rc / Math.Sqrt(d);
             double q = DistributionHelper.GetNormalDistributionQuantile(TimeSeriesEnvironment.Current.Alpha);
             return new Result(q, s);
@@ -96,11 +96,11 @@ namespace TimeSeriesAnalysis.Model
                 {
                     abv += (excerpt[j] - lusum) * (excerpt[j + i] - rusum);
                     lund += (excerpt[j] - lusum) * (excerpt[j] - lusum);
-                    rund += (excerpt[j] - rusum) * (excerpt[j] - rusum);
+                    rund += (excerpt[j + i] - rusum) * (excerpt[j + i] - rusum);
                 }
-                abv /= (excerpt.Count - i);
-                double und = Math.Sqrt(rusum * lusum) / (excerpt.Count - i);
-                crl.Add(und);
+                double und = Math.Sqrt(rund * lund);
+                double val = abv == und ? 1.0 : abv / und;
+                crl.Add(val);
             }
             return crl;
         }
