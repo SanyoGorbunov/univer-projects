@@ -1,6 +1,6 @@
 ﻿namespace TimeSeriesAnalysis
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlLoadTS = new System.Windows.Forms.Panel();
             this.lblLoadTS = new System.Windows.Forms.Label();
             this.txtLoadTS = new System.Windows.Forms.TextBox();
@@ -60,6 +60,10 @@
             this.pnlCorrelogram = new System.Windows.Forms.Panel();
             this.lblCorrelogram = new System.Windows.Forms.Label();
             this.txtCorrelogramK = new System.Windows.Forms.TextBox();
+            this.pnlSettings = new System.Windows.Forms.Panel();
+            this.lblAlpha = new System.Windows.Forms.Label();
+            this.txtAlpha = new System.Windows.Forms.TextBox();
+            this.btnSetAlpha = new System.Windows.Forms.Button();
             this.pnlLoadTS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTS)).BeginInit();
             this.pnlSigns.SuspendLayout();
@@ -68,6 +72,7 @@
             this.pnlSpearmanTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTS)).BeginInit();
             this.pnlCorrelogram.SuspendLayout();
+            this.pnlSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLoadTS
@@ -79,7 +84,7 @@
             this.pnlLoadTS.Controls.Add(this.lblLoadTS);
             this.pnlLoadTS.Location = new System.Drawing.Point(12, 12);
             this.pnlLoadTS.Name = "pnlLoadTS";
-            this.pnlLoadTS.Size = new System.Drawing.Size(232, 426);
+            this.pnlLoadTS.Size = new System.Drawing.Size(232, 379);
             this.pnlLoadTS.TabIndex = 0;
             // 
             // lblLoadTS
@@ -123,7 +128,7 @@
             this.dgTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgTS.Location = new System.Drawing.Point(6, 42);
             this.dgTS.Name = "dgTS";
-            this.dgTS.Size = new System.Drawing.Size(223, 381);
+            this.dgTS.Size = new System.Drawing.Size(223, 334);
             this.dgTS.TabIndex = 4;
             // 
             // dlgOpenTS
@@ -286,16 +291,16 @@
             // 
             // chartTS
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartTS.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartTS.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartTS.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartTS.Legends.Add(legend2);
             this.chartTS.Location = new System.Drawing.Point(250, 193);
             this.chartTS.Name = "chartTS";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartTS.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartTS.Series.Add(series2);
             this.chartTS.Size = new System.Drawing.Size(589, 245);
             this.chartTS.TabIndex = 3;
             this.chartTS.Text = "chart1";
@@ -329,6 +334,7 @@
             this.pnlCorrelogram.Name = "pnlCorrelogram";
             this.pnlCorrelogram.Size = new System.Drawing.Size(237, 35);
             this.pnlCorrelogram.TabIndex = 6;
+            this.pnlCorrelogram.Visible = false;
             // 
             // lblCorrelogram
             // 
@@ -346,11 +352,49 @@
             this.txtCorrelogramK.Size = new System.Drawing.Size(54, 20);
             this.txtCorrelogramK.TabIndex = 7;
             // 
+            // pnlSettings
+            // 
+            this.pnlSettings.Controls.Add(this.btnSetAlpha);
+            this.pnlSettings.Controls.Add(this.txtAlpha);
+            this.pnlSettings.Controls.Add(this.lblAlpha);
+            this.pnlSettings.Location = new System.Drawing.Point(12, 394);
+            this.pnlSettings.Name = "pnlSettings";
+            this.pnlSettings.Size = new System.Drawing.Size(232, 44);
+            this.pnlSettings.TabIndex = 7;
+            // 
+            // lblAlpha
+            // 
+            this.lblAlpha.AutoSize = true;
+            this.lblAlpha.Location = new System.Drawing.Point(3, 0);
+            this.lblAlpha.Name = "lblAlpha";
+            this.lblAlpha.Size = new System.Drawing.Size(56, 13);
+            this.lblAlpha.TabIndex = 0;
+            this.lblAlpha.Text = "Set Alpha:";
+            // 
+            // txtAlpha
+            // 
+            this.txtAlpha.Location = new System.Drawing.Point(6, 16);
+            this.txtAlpha.Name = "txtAlpha";
+            this.txtAlpha.Size = new System.Drawing.Size(100, 20);
+            this.txtAlpha.TabIndex = 1;
+            this.txtAlpha.Text = "0.05";
+            // 
+            // btnSetAlpha
+            // 
+            this.btnSetAlpha.Location = new System.Drawing.Point(108, 13);
+            this.btnSetAlpha.Name = "btnSetAlpha";
+            this.btnSetAlpha.Size = new System.Drawing.Size(73, 24);
+            this.btnSetAlpha.TabIndex = 2;
+            this.btnSetAlpha.Text = "Set";
+            this.btnSetAlpha.UseVisualStyleBackColor = true;
+            this.btnSetAlpha.Click += new System.EventHandler(this.btnSetAlpha_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlCorrelogram);
             this.Controls.Add(this.btnShowHistogram);
             this.Controls.Add(this.chartTS);
@@ -373,6 +417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartTS)).EndInit();
             this.pnlCorrelogram.ResumeLayout(false);
             this.pnlCorrelogram.PerformLayout();
+            this.pnlSettings.ResumeLayout(false);
+            this.pnlSettings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,6 +454,10 @@
         private System.Windows.Forms.Panel pnlCorrelogram;
         private System.Windows.Forms.TextBox txtCorrelogramK;
         private System.Windows.Forms.Label lblCorrelogram;
+        private System.Windows.Forms.Panel pnlSettings;
+        private System.Windows.Forms.Button btnSetAlpha;
+        private System.Windows.Forms.TextBox txtAlpha;
+        private System.Windows.Forms.Label lblAlpha;
     }
 }
 

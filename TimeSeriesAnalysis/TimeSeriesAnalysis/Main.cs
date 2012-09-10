@@ -13,9 +13,9 @@ namespace TimeSeriesAnalysis
     using LINQtoCSV;
     using TimeSeriesAnalysis.Model;
 
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace TimeSeriesAnalysis
         {
             TimeSeriesEnvironment.Current.ReadFromCsv(txtLoadTS.Text);
             dgTS.DataSource = TimeSeriesEnvironment.Current.TimeSeries;
-            btnShowCorrelogram.Visible = true;
+            pnlCorrelogram.Visible = true;
         }
 
         private void btnSignsTest_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace TimeSeriesAnalysis
 
             var cor = RandomExcerptChecker.GetCorrelogram(ts.Excerpt, k);
 
-            Series crlgrm = new Series("TS Corelogram")
+            Series crlgrm = new Series("TS Correlogram")
             {
                 ChartType = SeriesChartType.Column
             };
@@ -123,6 +123,19 @@ namespace TimeSeriesAnalysis
             chartTS.Series.Clear();
             chartTS.Series.Add(crlgrm);
             chartTS.ResetAutoValues();
+        }
+
+        private void btnSetAlpha_Click(object sender, EventArgs e)
+        {
+            double alpha;
+            if (double.TryParse(txtAlpha.Text, out alpha) && alpha > 0 && alpha < 1)
+            {
+                TimeSeriesEnvironment.Current.Alpha = alpha;
+            }
+            else
+            {
+                MessageBox.Show("Incorrect value of alpha.");
+            }
         }
     }
 }

@@ -19,7 +19,10 @@ namespace TimeSeriesAnalysis.Model
             {
                 if (_current == null)
                 {
-                    _current = new TimeSeriesEnvironment();
+                    _current = new TimeSeriesEnvironment()
+                    {
+                        Alpha = 0.05
+                    };
                 }
                 return _current;
             }
