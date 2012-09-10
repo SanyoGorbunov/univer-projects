@@ -6,3 +6,13 @@ c:\users\kardan\documents\visual studio 2010\Projects\TimeSeriesAnalysis\TimeSer
 c:\users\kardan\documents\visual studio 2010\Projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\GenerateResource.write.1.tlog
 c:\users\kardan\documents\visual studio 2010\Projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.exe
 c:\users\kardan\documents\visual studio 2010\Projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.Properties.Resources.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\TimeSeriesAnalysis.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\TimeSeriesAnalysis.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\LINQtoCSV.dll
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\LINQtoCSV.pdb
