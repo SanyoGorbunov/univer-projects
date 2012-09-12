@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace TimeSeriesAnalysis
 {
+
     static class Program
     {
         /// <summary>

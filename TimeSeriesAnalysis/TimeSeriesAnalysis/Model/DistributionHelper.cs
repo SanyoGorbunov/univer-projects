@@ -9,7 +9,7 @@ namespace TimeSeriesAnalysis.Model
     {
         public static double GetNormalDistributionQuantile(double alpha)
         {
-            double t = Math.Sqrt((-2 * Math.Log(alpha)));
+            double t = Math.Sqrt((-2 * Math.Log(alpha / 2)));
             double c0 = 2.515517, c1 = 0.802853, c2 = 0.010328;
             double d1 = 1.432788, d2 = 0.1832297, d3 = 0.001308;
             double val = t - (c0 + c1 * t + c2 * t * t) / (1 + d1 * t +

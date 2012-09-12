@@ -104,5 +104,13 @@ namespace TimeSeriesAnalysis.Model
             }
             return crl;
         }
+        public static Result TestCorrelation(double r, int n, int k)
+        {
+            double q = DistributionHelper.GetStudentDistributionQuantile(
+                TimeSeriesEnvironment.Current.Alpha,
+                n - k - 2);
+            double t = r * Math.Sqrt(n - k - 2) / Math.Sqrt(1 - r * r);
+            return new Result(q, t);
+        }
     }
 }
