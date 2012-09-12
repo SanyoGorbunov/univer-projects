@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Model\DistributionHelper.cs" />
     <Compile Include="Model\EstimationHelper.cs" />
+    <Compile Include="Model\OneColumnRecord.cs" />
     <Compile Include="Model\RandomExcerptChecker.cs" />
     <Compile Include="Model\TimeSeries.cs" />
     <Compile Include="Model\TimeSeriesEnvironment.cs" />

@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlLoadTS = new System.Windows.Forms.Panel();
-            this.lblLoadTS = new System.Windows.Forms.Label();
-            this.txtLoadTS = new System.Windows.Forms.TextBox();
-            this.btnLoadTSOpenDlg = new System.Windows.Forms.Button();
-            this.btnLoadTSRead = new System.Windows.Forms.Button();
+            this.btnSaveTSRead = new System.Windows.Forms.Button();
             this.dgTS = new System.Windows.Forms.DataGridView();
+            this.btnLoadTSRead = new System.Windows.Forms.Button();
+            this.btnLoadTSOpenDlg = new System.Windows.Forms.Button();
+            this.txtLoadTS = new System.Windows.Forms.TextBox();
+            this.lblLoadTS = new System.Windows.Forms.Label();
             this.dlgOpenTS = new System.Windows.Forms.OpenFileDialog();
             this.pnlSigns = new System.Windows.Forms.Panel();
-            this.lblSigns = new System.Windows.Forms.Label();
-            this.btnSignsTest = new System.Windows.Forms.Button();
-            this.lblSignsStat = new System.Windows.Forms.Label();
             this.pnlSignsTest = new System.Windows.Forms.Panel();
-            this.lblSignsQuantile = new System.Windows.Forms.Label();
-            this.lblSignsComp = new System.Windows.Forms.Label();
             this.lblSignsResult = new System.Windows.Forms.Label();
+            this.lblSignsComp = new System.Windows.Forms.Label();
+            this.lblSignsQuantile = new System.Windows.Forms.Label();
+            this.lblSignsStat = new System.Windows.Forms.Label();
+            this.btnSignsTest = new System.Windows.Forms.Button();
+            this.lblSigns = new System.Windows.Forms.Label();
             this.pnlSpearman = new System.Windows.Forms.Panel();
             this.pnlSpearmanTest = new System.Windows.Forms.Panel();
             this.lblSpearmanTest = new System.Windows.Forms.Label();
@@ -58,12 +59,18 @@
             this.btnShowHistogram = new System.Windows.Forms.Button();
             this.btnShowCorrelogram = new System.Windows.Forms.Button();
             this.pnlCorrelogram = new System.Windows.Forms.Panel();
-            this.lblCorrelogram = new System.Windows.Forms.Label();
             this.txtCorrelogramK = new System.Windows.Forms.TextBox();
+            this.lblCorrelogram = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
-            this.lblAlpha = new System.Windows.Forms.Label();
-            this.txtAlpha = new System.Windows.Forms.TextBox();
             this.btnSetAlpha = new System.Windows.Forms.Button();
+            this.txtAlpha = new System.Windows.Forms.TextBox();
+            this.lblAlpha = new System.Windows.Forms.Label();
+            this.dlgSaveTS = new System.Windows.Forms.SaveFileDialog();
+            this.dgCorrelation = new System.Windows.Forms.DataGridView();
+            this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Statistics = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsRandom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlLoadTS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTS)).BeginInit();
             this.pnlSigns.SuspendLayout();
@@ -73,10 +80,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartTS)).BeginInit();
             this.pnlCorrelogram.SuspendLayout();
             this.pnlSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCorrelation)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLoadTS
             // 
+            this.pnlLoadTS.Controls.Add(this.btnSaveTSRead);
             this.pnlLoadTS.Controls.Add(this.dgTS);
             this.pnlLoadTS.Controls.Add(this.btnLoadTSRead);
             this.pnlLoadTS.Controls.Add(this.btnLoadTSOpenDlg);
@@ -87,6 +96,51 @@
             this.pnlLoadTS.Size = new System.Drawing.Size(232, 379);
             this.pnlLoadTS.TabIndex = 0;
             // 
+            // btnSaveTSRead
+            // 
+            this.btnSaveTSRead.Location = new System.Drawing.Point(173, 35);
+            this.btnSaveTSRead.Name = "btnSaveTSRead";
+            this.btnSaveTSRead.Size = new System.Drawing.Size(56, 20);
+            this.btnSaveTSRead.TabIndex = 5;
+            this.btnSaveTSRead.Text = "Save";
+            this.btnSaveTSRead.UseVisualStyleBackColor = true;
+            this.btnSaveTSRead.Click += new System.EventHandler(this.btnSaveTSRead_Click);
+            // 
+            // dgTS
+            // 
+            this.dgTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTS.Location = new System.Drawing.Point(6, 61);
+            this.dgTS.Name = "dgTS";
+            this.dgTS.Size = new System.Drawing.Size(223, 315);
+            this.dgTS.TabIndex = 4;
+            // 
+            // btnLoadTSRead
+            // 
+            this.btnLoadTSRead.Location = new System.Drawing.Point(111, 35);
+            this.btnLoadTSRead.Name = "btnLoadTSRead";
+            this.btnLoadTSRead.Size = new System.Drawing.Size(56, 20);
+            this.btnLoadTSRead.TabIndex = 3;
+            this.btnLoadTSRead.Text = "Load";
+            this.btnLoadTSRead.UseVisualStyleBackColor = true;
+            this.btnLoadTSRead.Click += new System.EventHandler(this.btnLoadTSRead_Click);
+            // 
+            // btnLoadTSOpenDlg
+            // 
+            this.btnLoadTSOpenDlg.Location = new System.Drawing.Point(203, 16);
+            this.btnLoadTSOpenDlg.Name = "btnLoadTSOpenDlg";
+            this.btnLoadTSOpenDlg.Size = new System.Drawing.Size(26, 20);
+            this.btnLoadTSOpenDlg.TabIndex = 2;
+            this.btnLoadTSOpenDlg.Text = "...";
+            this.btnLoadTSOpenDlg.UseVisualStyleBackColor = true;
+            this.btnLoadTSOpenDlg.Click += new System.EventHandler(this.btnLoadTSOpenDlg_Click);
+            // 
+            // txtLoadTS
+            // 
+            this.txtLoadTS.Location = new System.Drawing.Point(6, 16);
+            this.txtLoadTS.Name = "txtLoadTS";
+            this.txtLoadTS.Size = new System.Drawing.Size(191, 20);
+            this.txtLoadTS.TabIndex = 1;
+            // 
             // lblLoadTS
             // 
             this.lblLoadTS.AutoSize = true;
@@ -95,41 +149,6 @@
             this.lblLoadTS.Size = new System.Drawing.Size(91, 13);
             this.lblLoadTS.TabIndex = 0;
             this.lblLoadTS.Text = "Open Time Series";
-            // 
-            // txtLoadTS
-            // 
-            this.txtLoadTS.Location = new System.Drawing.Point(6, 16);
-            this.txtLoadTS.Name = "txtLoadTS";
-            this.txtLoadTS.Size = new System.Drawing.Size(129, 20);
-            this.txtLoadTS.TabIndex = 1;
-            // 
-            // btnLoadTSOpenDlg
-            // 
-            this.btnLoadTSOpenDlg.Location = new System.Drawing.Point(141, 16);
-            this.btnLoadTSOpenDlg.Name = "btnLoadTSOpenDlg";
-            this.btnLoadTSOpenDlg.Size = new System.Drawing.Size(26, 20);
-            this.btnLoadTSOpenDlg.TabIndex = 2;
-            this.btnLoadTSOpenDlg.Text = "...";
-            this.btnLoadTSOpenDlg.UseVisualStyleBackColor = true;
-            this.btnLoadTSOpenDlg.Click += new System.EventHandler(this.btnLoadTSOpenDlg_Click);
-            // 
-            // btnLoadTSRead
-            // 
-            this.btnLoadTSRead.Location = new System.Drawing.Point(173, 16);
-            this.btnLoadTSRead.Name = "btnLoadTSRead";
-            this.btnLoadTSRead.Size = new System.Drawing.Size(56, 20);
-            this.btnLoadTSRead.TabIndex = 3;
-            this.btnLoadTSRead.Text = "Load";
-            this.btnLoadTSRead.UseVisualStyleBackColor = true;
-            this.btnLoadTSRead.Click += new System.EventHandler(this.btnLoadTSRead_Click);
-            // 
-            // dgTS
-            // 
-            this.dgTS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTS.Location = new System.Drawing.Point(6, 42);
-            this.dgTS.Name = "dgTS";
-            this.dgTS.Size = new System.Drawing.Size(223, 334);
-            this.dgTS.TabIndex = 4;
             // 
             // dlgOpenTS
             // 
@@ -145,34 +164,6 @@
             this.pnlSigns.Size = new System.Drawing.Size(589, 64);
             this.pnlSigns.TabIndex = 1;
             // 
-            // lblSigns
-            // 
-            this.lblSigns.AutoSize = true;
-            this.lblSigns.Location = new System.Drawing.Point(3, 0);
-            this.lblSigns.Name = "lblSigns";
-            this.lblSigns.Size = new System.Drawing.Size(72, 13);
-            this.lblSigns.TabIndex = 0;
-            this.lblSigns.Text = "Signs Method";
-            // 
-            // btnSignsTest
-            // 
-            this.btnSignsTest.Location = new System.Drawing.Point(6, 16);
-            this.btnSignsTest.Name = "btnSignsTest";
-            this.btnSignsTest.Size = new System.Drawing.Size(69, 23);
-            this.btnSignsTest.TabIndex = 1;
-            this.btnSignsTest.Text = "Test";
-            this.btnSignsTest.UseVisualStyleBackColor = true;
-            this.btnSignsTest.Click += new System.EventHandler(this.btnSignsTest_Click);
-            // 
-            // lblSignsStat
-            // 
-            this.lblSignsStat.AutoSize = true;
-            this.lblSignsStat.Location = new System.Drawing.Point(3, 0);
-            this.lblSignsStat.Name = "lblSignsStat";
-            this.lblSignsStat.Size = new System.Drawing.Size(35, 13);
-            this.lblSignsStat.TabIndex = 2;
-            this.lblSignsStat.Text = "label1";
-            // 
             // pnlSignsTest
             // 
             this.pnlSignsTest.Controls.Add(this.lblSignsResult);
@@ -185,14 +176,14 @@
             this.pnlSignsTest.TabIndex = 3;
             this.pnlSignsTest.Visible = false;
             // 
-            // lblSignsQuantile
+            // lblSignsResult
             // 
-            this.lblSignsQuantile.AutoSize = true;
-            this.lblSignsQuantile.Location = new System.Drawing.Point(379, 0);
-            this.lblSignsQuantile.Name = "lblSignsQuantile";
-            this.lblSignsQuantile.Size = new System.Drawing.Size(35, 13);
-            this.lblSignsQuantile.TabIndex = 3;
-            this.lblSignsQuantile.Text = "label1";
+            this.lblSignsResult.Location = new System.Drawing.Point(6, 23);
+            this.lblSignsResult.Name = "lblSignsResult";
+            this.lblSignsResult.Size = new System.Drawing.Size(496, 23);
+            this.lblSignsResult.TabIndex = 5;
+            this.lblSignsResult.Text = "label1";
+            this.lblSignsResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSignsComp
             // 
@@ -203,14 +194,42 @@
             this.lblSignsComp.TabIndex = 4;
             this.lblSignsComp.Text = "label1";
             // 
-            // lblSignsResult
+            // lblSignsQuantile
             // 
-            this.lblSignsResult.Location = new System.Drawing.Point(6, 23);
-            this.lblSignsResult.Name = "lblSignsResult";
-            this.lblSignsResult.Size = new System.Drawing.Size(496, 23);
-            this.lblSignsResult.TabIndex = 5;
-            this.lblSignsResult.Text = "label1";
-            this.lblSignsResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSignsQuantile.AutoSize = true;
+            this.lblSignsQuantile.Location = new System.Drawing.Point(379, 0);
+            this.lblSignsQuantile.Name = "lblSignsQuantile";
+            this.lblSignsQuantile.Size = new System.Drawing.Size(35, 13);
+            this.lblSignsQuantile.TabIndex = 3;
+            this.lblSignsQuantile.Text = "label1";
+            // 
+            // lblSignsStat
+            // 
+            this.lblSignsStat.AutoSize = true;
+            this.lblSignsStat.Location = new System.Drawing.Point(3, 0);
+            this.lblSignsStat.Name = "lblSignsStat";
+            this.lblSignsStat.Size = new System.Drawing.Size(35, 13);
+            this.lblSignsStat.TabIndex = 2;
+            this.lblSignsStat.Text = "label1";
+            // 
+            // btnSignsTest
+            // 
+            this.btnSignsTest.Location = new System.Drawing.Point(6, 16);
+            this.btnSignsTest.Name = "btnSignsTest";
+            this.btnSignsTest.Size = new System.Drawing.Size(69, 23);
+            this.btnSignsTest.TabIndex = 1;
+            this.btnSignsTest.Text = "Test";
+            this.btnSignsTest.UseVisualStyleBackColor = true;
+            this.btnSignsTest.Click += new System.EventHandler(this.btnSignsTest_Click);
+            // 
+            // lblSigns
+            // 
+            this.lblSigns.AutoSize = true;
+            this.lblSigns.Location = new System.Drawing.Point(3, 0);
+            this.lblSigns.Name = "lblSigns";
+            this.lblSigns.Size = new System.Drawing.Size(72, 13);
+            this.lblSigns.TabIndex = 0;
+            this.lblSigns.Text = "Signs Method";
             // 
             // pnlSpearman
             // 
@@ -291,17 +310,17 @@
             // 
             // chartTS
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartTS.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartTS.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartTS.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTS.Legends.Add(legend1);
             this.chartTS.Location = new System.Drawing.Point(250, 193);
             this.chartTS.Name = "chartTS";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartTS.Series.Add(series2);
-            this.chartTS.Size = new System.Drawing.Size(589, 245);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTS.Series.Add(series1);
+            this.chartTS.Size = new System.Drawing.Size(347, 245);
             this.chartTS.TabIndex = 3;
             this.chartTS.Text = "chart1";
             // 
@@ -336,6 +355,13 @@
             this.pnlCorrelogram.TabIndex = 6;
             this.pnlCorrelogram.Visible = false;
             // 
+            // txtCorrelogramK
+            // 
+            this.txtCorrelogramK.Location = new System.Drawing.Point(180, 14);
+            this.txtCorrelogramK.Name = "txtCorrelogramK";
+            this.txtCorrelogramK.Size = new System.Drawing.Size(54, 20);
+            this.txtCorrelogramK.TabIndex = 7;
+            // 
             // lblCorrelogram
             // 
             this.lblCorrelogram.AutoSize = true;
@@ -344,13 +370,6 @@
             this.lblCorrelogram.Size = new System.Drawing.Size(58, 13);
             this.lblCorrelogram.TabIndex = 6;
             this.lblCorrelogram.Text = "K Variable:";
-            // 
-            // txtCorrelogramK
-            // 
-            this.txtCorrelogramK.Location = new System.Drawing.Point(180, 14);
-            this.txtCorrelogramK.Name = "txtCorrelogramK";
-            this.txtCorrelogramK.Size = new System.Drawing.Size(54, 20);
-            this.txtCorrelogramK.TabIndex = 7;
             // 
             // pnlSettings
             // 
@@ -362,23 +381,6 @@
             this.pnlSettings.Size = new System.Drawing.Size(232, 44);
             this.pnlSettings.TabIndex = 7;
             // 
-            // lblAlpha
-            // 
-            this.lblAlpha.AutoSize = true;
-            this.lblAlpha.Location = new System.Drawing.Point(3, 0);
-            this.lblAlpha.Name = "lblAlpha";
-            this.lblAlpha.Size = new System.Drawing.Size(56, 13);
-            this.lblAlpha.TabIndex = 0;
-            this.lblAlpha.Text = "Set Alpha:";
-            // 
-            // txtAlpha
-            // 
-            this.txtAlpha.Location = new System.Drawing.Point(6, 16);
-            this.txtAlpha.Name = "txtAlpha";
-            this.txtAlpha.Size = new System.Drawing.Size(100, 20);
-            this.txtAlpha.TabIndex = 1;
-            this.txtAlpha.Text = "0.05";
-            // 
             // btnSetAlpha
             // 
             this.btnSetAlpha.Location = new System.Drawing.Point(108, 13);
@@ -389,11 +391,70 @@
             this.btnSetAlpha.UseVisualStyleBackColor = true;
             this.btnSetAlpha.Click += new System.EventHandler(this.btnSetAlpha_Click);
             // 
-            // Form1
+            // txtAlpha
+            // 
+            this.txtAlpha.Location = new System.Drawing.Point(6, 16);
+            this.txtAlpha.Name = "txtAlpha";
+            this.txtAlpha.Size = new System.Drawing.Size(100, 20);
+            this.txtAlpha.TabIndex = 1;
+            this.txtAlpha.Text = "0.05";
+            // 
+            // lblAlpha
+            // 
+            this.lblAlpha.AutoSize = true;
+            this.lblAlpha.Location = new System.Drawing.Point(3, 0);
+            this.lblAlpha.Name = "lblAlpha";
+            this.lblAlpha.Size = new System.Drawing.Size(56, 13);
+            this.lblAlpha.TabIndex = 0;
+            this.lblAlpha.Text = "Set Alpha:";
+            // 
+            // dgCorrelation
+            // 
+            this.dgCorrelation.AllowUserToAddRows = false;
+            this.dgCorrelation.AllowUserToDeleteRows = false;
+            this.dgCorrelation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCorrelation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Index,
+            this.Statistics,
+            this.IsRandom,
+            this.Quantile});
+            this.dgCorrelation.Location = new System.Drawing.Point(603, 193);
+            this.dgCorrelation.Name = "dgCorrelation";
+            this.dgCorrelation.ReadOnly = true;
+            this.dgCorrelation.Size = new System.Drawing.Size(240, 245);
+            this.dgCorrelation.TabIndex = 8;
+            // 
+            // Index
+            // 
+            this.Index.HeaderText = "K";
+            this.Index.Name = "Index";
+            this.Index.ReadOnly = true;
+            this.Index.Width = 40;
+            // 
+            // Statistics
+            // 
+            this.Statistics.HeaderText = "Statistics";
+            this.Statistics.Name = "Statistics";
+            this.Statistics.ReadOnly = true;
+            // 
+            // IsRandom
+            // 
+            this.IsRandom.HeaderText = "";
+            this.IsRandom.Name = "IsRandom";
+            this.IsRandom.ReadOnly = true;
+            // 
+            // Quantile
+            // 
+            this.Quantile.HeaderText = "Quantile";
+            this.Quantile.Name = "Quantile";
+            this.Quantile.ReadOnly = true;
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.dgCorrelation);
             this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.pnlCorrelogram);
             this.Controls.Add(this.btnShowHistogram);
@@ -401,7 +462,7 @@
             this.Controls.Add(this.pnlSpearman);
             this.Controls.Add(this.pnlSigns);
             this.Controls.Add(this.pnlLoadTS);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Form1";
             this.pnlLoadTS.ResumeLayout(false);
             this.pnlLoadTS.PerformLayout();
@@ -419,6 +480,7 @@
             this.pnlCorrelogram.PerformLayout();
             this.pnlSettings.ResumeLayout(false);
             this.pnlSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCorrelation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,6 +520,13 @@
         private System.Windows.Forms.Button btnSetAlpha;
         private System.Windows.Forms.TextBox txtAlpha;
         private System.Windows.Forms.Label lblAlpha;
+        private System.Windows.Forms.Button btnSaveTSRead;
+        private System.Windows.Forms.SaveFileDialog dlgSaveTS;
+        private System.Windows.Forms.DataGridView dgCorrelation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Index;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Statistics;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsRandom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantile;
     }
 }
 

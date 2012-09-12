@@ -39,8 +39,8 @@ namespace TimeSeriesAnalysis
         {
             var res = RandomExcerptChecker.TestSignsMethod(
                 (new TimeSeries(TimeSeriesEnvironment.Current.TimeSeries, false)).Excerpt);
-            lblSignsStat.Text = string.Format("|{0}|",res.Statistics);
-            lblSignsQuantile.Text = res.Quantile.ToString();
+            lblSignsStat.Text = string.Format("|{0:0.0000}|",res.Statistics);
+            lblSignsQuantile.Text = res.Quantile.ToString("0.0000");
             if (res.IsRandom)
             {
                 lblSignsComp.Text = "≤";
@@ -49,7 +49,14 @@ namespace TimeSeriesAnalysis
             else
             {
                 lblSignsComp.Text = ">";
-                lblSignsResult.Text = "Time series has trend.";
+                if (res.Statistics < 0)
+                {
+                    lblSignsResult.Text = "Time series has increasing trend.";
+                }
+                else
+                {
+                    lblSignsResult.Text = "Time series has decreasing trend.";
+                }
             }
             pnlSignsTest.Visible = true;
         }
@@ -58,8 +65,8 @@ namespace TimeSeriesAnalysis
         {
             var res = RandomExcerptChecker.TestSpearmanMethod(
                 (new TimeSeries(TimeSeriesEnvironment.Current.TimeSeries, false)).Excerpt);
-            lblSpearmanStat.Text = string.Format("|{0}|", res.Statistics);
-            lblSpearmanQuantile.Text = res.Quantile.ToString();
+            lblSpearmanStat.Text = string.Format("|{0:0.0000}|", res.Statistics);
+            lblSpearmanQuantile.Text = res.Quantile.ToString("0.0000");
             if (res.IsRandom)
             {
                 lblSpearmanComp.Text = "≤";
@@ -85,7 +92,7 @@ namespace TimeSeriesAnalysis
             var series = (new TimeSeries(TimeSeriesEnvironment.Current.TimeSeries, false)).Data;
             Series hist = new Series("TS Histogram")
             {
-                ChartType = SeriesChartType.Column
+                ChartType = SeriesChartType.Line
             };
 
             foreach (var item in series)
@@ -115,9 +122,16 @@ namespace TimeSeriesAnalysis
             {
                 ChartType = SeriesChartType.Column
             };
+
+            dgCorrelation.Rows.Clear();
             for (int i = 0; i < cor.Count; i++)
             {
                 crlgrm.Points.AddXY(i, cor[i]);
+                var res = RandomExcerptChecker.TestCorrelation(cor[i], ts.Count, i);
+                dgCorrelation.Rows.Add(i,
+                    string.Format("|{0:0.0000}|", res.Statistics),
+                    res.IsRandom ? "≤" : ">",
+                    res.Quantile.ToString("0.0000"));
             }
 
             chartTS.Series.Clear();
@@ -135,6 +149,14 @@ namespace TimeSeriesAnalysis
             else
             {
                 MessageBox.Show("Incorrect value of alpha.");
+            }
+        }
+
+        private void btnSaveTSRead_Click(object sender, EventArgs e)
+        {
+            if (dlgSaveTS.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                TimeSeriesEnvironment.Current.SaveToCsv(dlgSaveTS.FileName);
             }
         }
     }
