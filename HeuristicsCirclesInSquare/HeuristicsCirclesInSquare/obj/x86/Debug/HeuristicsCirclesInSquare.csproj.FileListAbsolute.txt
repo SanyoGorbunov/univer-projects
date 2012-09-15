@@ -1,0 +1,8 @@
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.Properties.Resources.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\bin\Debug\HeuristicsCirclesInSquare.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\bin\Debug\HeuristicsCirclesInSquare.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.pdb
