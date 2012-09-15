@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,16 +51,26 @@
     <Compile Include="CirclesInSquare\CiSDecisionSpace.cs" />
     <Compile Include="CirclesInSquare\CiSPoint.cs" />
     <Compile Include="CirclesInSquare\CiSTarget.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="HillClimbing\HLOptions.cs" />
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="HillClimbing\Algorithm.cs" />
+    <Compile Include="HillClimbing\HLAlgorithm.cs" />
     <Compile Include="HillClimbing\IDecisionSpace.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visualisation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualisation.Designer.cs">
+      <DependentUpon>Visualisation.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Visualisation.resx">
+      <DependentUpon>Visualisation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

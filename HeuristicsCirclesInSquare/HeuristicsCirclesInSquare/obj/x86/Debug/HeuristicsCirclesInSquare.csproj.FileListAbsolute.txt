@@ -6,3 +6,5 @@ C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\Heuris
 C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\bin\Debug\HeuristicsCirclesInSquare.pdb
 C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.exe
 C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.Main.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\HeuristicsCirclesInSquare\HeuristicsCirclesInSquare\obj\x86\Debug\HeuristicsCirclesInSquare.Visualisation.resources

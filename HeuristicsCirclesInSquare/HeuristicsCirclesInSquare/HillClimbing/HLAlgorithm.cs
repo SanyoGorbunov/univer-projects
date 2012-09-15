@@ -5,20 +5,31 @@ using System.Text;
 
 namespace HeuristicsCirclesInSquare.HillClimbing
 {
-    public class Algorithm<T>
+    public class HLAlgorithm<T>
     {
+        private static List<double> _flog = new List<double>();
+        public static List<double> FLog
+        {
+            get
+            {
+                return _flog;
+            }
+        }
+
         public static T Execute(Func<T, double> target,
             IDecisionSpace<T> space,
-            double eps,
-            int k,
-            double min)
+            HLOptions opt)
         {
+            _flog.Clear();
+
+            double eps = opt.Eps;
             T x = space.GetStarted();
             double f = target(x);
+            _flog.Add(f);
             do
             {
                 bool found = false;
-                for (int i = 0; i < k; i++)
+                for (int i = 0; i < opt.K; i++)
                 {
                     T y = space.GetNext(x, eps);
                     double fNew = target(y);
@@ -27,19 +38,20 @@ namespace HeuristicsCirclesInSquare.HillClimbing
                         f = fNew;
                         x = y;
                         found = true;
-                        System.Console.WriteLine(x.ToString() + " " + f);
+                        _flog.Add(f);
+                        //System.Console.WriteLine(x.ToString() + " " + f);
                         break;
                     }
                 }
                 if (found)
                 {
-                    eps *= 2;
+                    eps *= opt.Inc;
                 }
                 else
                 {
-                    eps /= 2;
+                    eps *= opt.Dec;
                 }
-            } while (eps > min);
+            } while (eps > opt.Min);
             return x;
         }
 
