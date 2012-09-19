@@ -17,3 +17,5 @@ C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAna
 C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\LINQtoCSV.dll
 C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\LINQtoCSV.pdb
 C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\obj\x86\Debug\TimeSeriesAnalysis.Main.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\Common.dll
+C:\Users\Sanyo\Documents\GitHub\univer-projects\TimeSeriesAnalysis\TimeSeriesAnalysis\bin\Debug\Common.pdb

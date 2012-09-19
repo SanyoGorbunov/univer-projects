@@ -5,6 +5,7 @@ using System.Text;
 
 namespace TimeSeriesAnalysis.Model
 {
+    using Common;
 
     public static class RandomExcerptChecker
     {
