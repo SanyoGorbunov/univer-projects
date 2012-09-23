@@ -36,4 +36,12 @@ namespace Common
             }
         }
     }
+
+    public class Interval
+    {
+        public double Value { get; set; }
+
+        public double Upper { get; set; }
+        public double Lower { get; set; }
+    }
 }
