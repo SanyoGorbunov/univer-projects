@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Common
 {
-    static class EstimationHelper
+    public static class EstimationHelper
     {
         public static double CalculateExpectedValue(List<double> excerpt)
         {

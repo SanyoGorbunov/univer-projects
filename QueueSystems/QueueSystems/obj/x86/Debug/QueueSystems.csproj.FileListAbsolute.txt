@@ -1,0 +1,12 @@
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\bin\Debug\QueueSystems.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\bin\Debug\QueueSystems.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\bin\Debug\Common.dll
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\bin\Debug\Common.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\QueueSystems.Properties.Resources.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\QueueSystems.TMO.resources
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\QueueSystems.exe
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\QueueSystems.pdb
+C:\Users\Sanyo\Documents\GitHub\univer-projects\QueueSystems\QueueSystems\obj\x86\Debug\QueueSystems.Streams.resources
